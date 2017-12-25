@@ -7,13 +7,13 @@ app.get('/index.htm', function (req, res) {
 
 app.get('/process_get', function (req, res) {
 
-    // 输出 JSON 格式
-    var response = {
-        "first_name":req.query.first_name,
-        "last_name":req.query.last_name
-    };
-    console.log(response);
-    res.end(JSON.stringify(response));
+
+    var name = req.query.first_name;
+
+    var html="<html><head></head><body><h1>"  +name+ " </h1><a href='http://192.168.5.105:8089/'></a></body></html>";
+
+
+
 })
 
 var server = app.listen(8081, function () {

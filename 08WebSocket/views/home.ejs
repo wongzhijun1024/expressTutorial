@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+    <script>
+        var ws = null;
+        function getWs() {
+            //ws = new WebSocket("ws://"+window.location.hostname+":8080");/ip访问
+            //1,获得WebSocket对象，传递一个地址
+            ws = new WebSocket("ws://192.168.3.103:8080");//本地访问，握手操作连接
+            //2,当前连接到服务器时
+            ws.onopen = function () {
+                console.log("ws open");
+            }
+            //3,接受服务器传递回来的数据
+            ws.onmessage = function (event) {
+                //1,创建一个div的标签
+                var div = document.createElement("div");
+                //2,把接收到的数据给div标签
+                div.textContent = event.data;
+                //3,把标签放到当前页面
+                document.body.appendChild(div);
+            }
+            //4,当连接关闭后的提醒
+            ws.onclose = function () {
+                console.log("ws close");
+            }
+            //5,连接服务器发生错误的提醒
+            ws.onerror = function () {
+                console.error("ws error");
+            }
+        }
+
+        function sendWs(){
+            //1,获得编辑框
+            var msg = document.getElementById("msg");
+            //2,判断编辑里面的数据是否为空
+            if(msg.value == ''){
+                alert('聊天内容不能为空');
+            } else {
+                //3,如果不为空就获得当前的数据
+                var date = new Date();
+                var time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+                //4,获得发送的数据
+                var data = "["+time+"] "+msg.value;
+                //5,ws发送数据
+                ws.send(data);
+                //6,清空数据
+                msg.value = '';
+            }
+        }
+    </script>
+</head>
+
+<body onload="getWs()">
+
+<input size="50" id="msg" placeholder="请输入聊天内容">
+<input type="submit" value="发送" id="show" onclick="sendWs()">
+
+</body>
+</html>

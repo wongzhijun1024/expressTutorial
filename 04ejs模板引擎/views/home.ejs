@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>my ejs template</title>
+</head>
+
+<body>
+
+<p>Hi <%= name %> </p>
+
+<table border="1px">
+
+    <tr><td>ID</td><td>姓名</td><td>年龄</td><td>介绍</td></tr>
+<% users.forEach(function (user) { %>
+
+    <tr><td><%= user.id  %></td><td><%= user.name  %></td><td><%= user.age %></td><td><%= user.intrduce  %></td></tr>
+
+<% }) %>
+
+</table>
+</body>
+</html>
