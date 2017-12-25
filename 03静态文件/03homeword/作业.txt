@@ -1,0 +1,14 @@
+1，下载bobtstrap模板
+2，创建项目文件夹，并且下载express框架
+3，在项目文件夹里面创建public 文件和 views文件
+4，把bobtstrap模板中js,css,imges的资源放到public 文件夹，把前端代码放到views文件夹
+5，创建js文件
+   （1）引入 express模块
+   （2）创建app对象
+   （3）引入静态文件代码
+       app.use(express.static('public'));
+   （4）设置路由，
+         app.get('/页面',function(req,res){
+          res.sendFile('view里面的文件');
+          })
+   （5）监听
