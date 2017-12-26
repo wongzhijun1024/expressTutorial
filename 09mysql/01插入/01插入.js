@@ -4,7 +4,7 @@ var mysql  = require('mysql');  //调用MySQL模块
 var connection = mysql.createConnection({
     host     : 'localhost',       //主机 ip
     user     : 'root',            //MySQL认证用户名
-    password : '',                //MySQL认证用户密码
+    password : 'root',                //MySQL认证用户密码
     port: '3306',                 //端口号
     database:'fs_music'          //数据库里面的数据
 });
