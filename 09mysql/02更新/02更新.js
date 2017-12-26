@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 connection.connect();
 //4,编写sql语句
 var userModSql = 'UPDATE users SET name = ?,password = ? WHERE Id = ?';
-var userModSql_Params = ['好孩子', '111',16];
+var userModSql_Params = ['好孩子', '111',132];
 //5，更新操作
 connection.query(userModSql,userModSql_Params,function (err, result) {
     if(err){

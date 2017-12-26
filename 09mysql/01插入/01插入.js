@@ -10,7 +10,6 @@ var connection = mysql.createConnection({
 });
 //2,连接
 connection.connect();
-
 //3,编写sql语句
 var  userAddSql = 'INSERT INTO users(name,password) VALUES(?,?)';
 var  userAddSql_Params = ['seraph', '333'];
