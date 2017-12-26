@@ -1,0 +1,11 @@
+1，ejs模板引擎的作业,在咋个基础上添加代码
+2，把模板的资源和前端代码添加到  public和views
+3，app.use(express.static('public'));   静态文件    可以访问我public里面的资源
+4,写路由
+   app.get('/',function(req,res){
+
+    //index是指views里面的前端页面，现在index应该是index.ttml,现在需要改为index.ejs,{}一个json格式的数据
+    res.render('index，{}');
+
+  });
+5，到views里面的index.ejs把数据改为{}
