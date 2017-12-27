@@ -1,19 +1,21 @@
 /**
  * Created by boy on 2017/7/10.
  */
+//1,引入express模块
 var express = require("express");
+//2,创建app对象
 var app = express();
-
-//指定模板引擎
+//3,指定模板引擎
 app.set("views engine", 'ejs');
-//指定模板位置
+//4,指定模板位置
 app.set('views', __dirname + '/views');
 
-//利用模板文件home.ejs渲染为html
+//5,路由
 app.get("/", function(req, res) {
-
-
+    //6,利用模板文件home.ejs渲染为html
     res.render('home', {
+        introduce:'111',
+        order:{price:'100'},
         name: '门户页面',users:[{
         "name" : "小刚",
             "age" : "18",
@@ -34,6 +36,6 @@ app.get("/", function(req, res) {
     );
 });
 
-var server = app.listen(3000, function() {
-    console.log("请在浏览器访问：http://localhost:3000/");
+var server = app.listen(8088, function() {
+    console.log("请在浏览器访问：http://localhost:8088/");
 });

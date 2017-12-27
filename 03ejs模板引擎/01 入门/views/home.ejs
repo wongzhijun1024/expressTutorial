@@ -5,8 +5,12 @@
 
 <body>
 
-<p>Hi <%= name %> </p>
+<% if(introduce.length>0) {%>
+   <h1>有数据</h1>
+<%}%>
 
+<p>Hi <%= name %> </p>
+<p>价格是<%= order.price %></p>
 <table border="1px">
 
     <tr><td>ID</td><td>姓名</td><td>年龄</td><td>介绍</td></tr>
