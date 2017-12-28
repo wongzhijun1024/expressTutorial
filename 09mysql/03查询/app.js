@@ -15,9 +15,9 @@ app.get('/', function (req, res) {
     dao.init();
 
     dao.query(0,'users',function (err, data) {
-        
-        console.log(data);
-       
+
+        console.log(data[0].name);
+
     })
 
 

@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
         res.send("再次欢迎访问");
     } else {
         //设置键isVisit的值是1，有效的时间是60秒
-        res.cookie('isVisit', 1, {maxAge: 60 * 1000});
+        res.cookie('isVisit', 1, {maxAge:2 * 1000});
         res.send("欢迎第一次访问");
     }
 });
-app.listen(8888);
+app.listen(8088);

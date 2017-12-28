@@ -6,19 +6,18 @@
 <body>
 
 <% if(introduce.length>0) {%>
-   <h1>有数据</h1>
+   <%=introduce%>
 <%}%>
 
-<p>Hi <%= name %> </p>
-<p>价格是<%= order.price %></p>
-<table border="1px">
+<h1><%= order.price%></h1>
 
-    <tr><td>ID</td><td>姓名</td><td>年龄</td><td>介绍</td></tr>
-<% users.forEach(function (user) { %>
+<input type="button" value="<%=name%>">
 
-    <tr><td><%= user.id  %></td><td><%= user.name  %></td><td><%= user.age %></td><td><%= user.intrduce  %></td></tr>
+<% users.forEach(function(user){%>
+    <h3><%=user.name%></h3>
+<%})%>
 
-<% }) %>
+
 
 </table>
 </body>

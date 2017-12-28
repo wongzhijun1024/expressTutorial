@@ -14,8 +14,8 @@ app.set('views', __dirname + '/views');
 app.get("/", function(req, res) {
     //6,利用模板文件home.ejs渲染为html
     res.render('home', {
-        introduce:'111',
-        order:{price:'100'},
+        introduce:'你的用户密码不正确',
+            order:{price:'100'},
         name: '门户页面',users:[{
         "name" : "小刚",
             "age" : "18",

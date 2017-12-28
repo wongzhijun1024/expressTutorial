@@ -27,13 +27,22 @@ app.post('/indexLogin',urlencodedParser, function (req, res) {
     var userDao =  new UserDao();
     //3, 验证用户名和密码是否合法
     userDao.verification(username,password,function(result){
-        if(result){
+
+        if(result==0){
+            console.log("用户不存在");
+        }else if(result==1){
+            console.log("密码错误");
+        }else{
+            console.log("密码正确");
+        }
+
+       /* if(result){
             res.render('index', {}
             );
         }else{
             res.render('login', {msg:'密码错了'}
             );
-        }
+        }*/
 
     });
 

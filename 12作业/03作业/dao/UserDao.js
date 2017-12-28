@@ -10,12 +10,19 @@ function UserDao(){
         //4,查询数据
         userMapping.query(name,function(err,data){
 
-            var buffer =data[0].password;
-                   if(passwd==buffer){
-                       callback(true);
-                   }else{
-                       callback(false);
-                   }
+            console.log(data.length);
+            if(data.length>0){
+                var buffer =data[0].password;
+                if(passwd==buffer){
+                    //
+                    callback(2);
+                }else{
+                    callback(1);
+                }
+            }else{
+                callback(0);
+            }
+
         });
        /*    var buffer='';
            //2,验证密码

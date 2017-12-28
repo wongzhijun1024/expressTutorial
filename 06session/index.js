@@ -19,4 +19,4 @@ app.get('/login', function(req, res){
         res.send('欢迎登陆！');
     }
 });
-app.listen(8888);
+app.listen(8088);
