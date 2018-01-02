@@ -4,7 +4,11 @@ var app = express();
 
 var bodyParser = require('body-parser');
 // 创建 application/x-www-form-urlencoded 编码解析
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+//3,指定模板引擎
+app.set("views engine", 'ejs');
+//4,指定模板位置
+app.set('views', __dirname + '/views');
 
 app.use(express.static('public'));
 
@@ -16,8 +20,15 @@ app.get('/', function (req, res) {
 
     dao.query(0,'users',function (err, data) {
 
-        console.log(data[0].name);
 
+
+        console.log(data);
+        res.render('home', {
+                introduce:'你的用户密码不正确',
+                order:{price:'100'},
+                name: '门户页面',users:data
+            }
+        );
     })
 
 
