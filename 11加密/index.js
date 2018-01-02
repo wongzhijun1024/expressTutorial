@@ -12,6 +12,7 @@ app.get("/",function (req,res) {
 
     console.log('加密后的数据:'+en_data);
 
+
 });
 
 app.listen(8088);

@@ -64,5 +64,17 @@ app.get('/login', function (req, res) {
     );
 })
 
+app.get('/form_component', function (req, res) {
+    res.render('form_component', {}
+    );
+})
+
+app.get('/form_validation', function (req, res) {
+    res.render('form_validation', {}
+    );
+})
+
+
+
 
 var server = app.listen(8088)
