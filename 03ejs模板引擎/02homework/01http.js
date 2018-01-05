@@ -19,7 +19,6 @@ app.get("/", function(req, res) {
 });
 
 app.get("/profile", function(req, res) {
-
     res.render('profile', {name:'kkkkkJenifer Smith',iconUrl:'img/profile-widget-avatar.jpg',introduce:'Hello I’m Jenifer Smith, a leading expert in interactive and creative design.'}
     );
 });

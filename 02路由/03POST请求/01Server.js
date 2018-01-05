@@ -11,13 +11,13 @@ app.get('/index.htm', function (req, res) {
     res.sendFile( __dirname + "/" + "index.html" );
 })
 
-app.post('/process_post', urlencodedParser, function (req, res) {
+app.post('/index', urlencodedParser, function (req, res) {
 
 
     var name =req.body.first_name;
     var last_name = req.body.last_name;
 
-    res.write(name+":"+last_name);
+    res.write(name+":aaaa"+last_name);
     res.end();
 })
 

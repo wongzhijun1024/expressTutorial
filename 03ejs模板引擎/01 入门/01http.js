@@ -13,25 +13,18 @@ app.set('views', __dirname + '/views');
 //5,路由
 app.get("/", function(req, res) {
     //6,利用模板文件home.ejs渲染为html
+    var Student = require('./been/Student.js');
+    var length=5;
+    var students = new Array();
+    for(var i=0;i<length;i++){
+        var student = new Student('小明'+i,19+i);
+        students[i]=student;
+    }
+
     res.render('home', {
         introduce:'你的用户密码不正确',
             order:{price:'100'},
-        name: '门户页面',users:[{
-        "name" : "小刚",
-            "age" : "18",
-            "intrduce" : "我是一个很帅的男孩！",
-            "id": 1
-    }, {
-        "name" : "小明",
-            "age" : "19",
-            "intrduce" : "我是一个很美的男孩！",
-            "id": 2
-    },{
-        "name" : "小花",
-            "age" : "17",
-            "intrduce" : "我是一个很妖艳的男孩！",
-            "id": 3
-    }]
+        name: '门户页面',users:students
     }
     );
 });

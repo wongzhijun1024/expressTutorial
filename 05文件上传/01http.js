@@ -20,7 +20,7 @@ app.get('/index', function (req, res) {
 app.post('/upload', function (req, res) {
 
     console.log(req.files[0]);  // 上传的文件信息
-    //3设置下载的图片
+   /* //3设置下载的图片
     var des_file = __dirname + "/upload/" + "123456.jpg";
     //4,读取文件
     fs.readFile( req.files[0].path, function (err, data) {
@@ -37,7 +37,7 @@ app.post('/upload', function (req, res) {
 
             res.end( JSON.stringify( response ) );
         });
-    });
+    });*/
 })
 
 var server = app.listen(8088);
