@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>my ejs template</title>
+</head>
+
+<body>
+
+<%include  head.ejs%>
+
+<h1>价格<%= order.price%></h1>
+
+<input type="button" value="<%=name%>">
+
+<% users.forEach(function(user){%>
+    <h3><%=user.name%></h3>
+<%})%>
+
+
+
+</table>
+</body>
+</html>
