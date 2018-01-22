@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
     }
 
     res.render('home', {
-        introduce:'头文件的信息',
+        introduce:'',
             order:{price:'100'},
         name: '门户页面',users:students
     }
