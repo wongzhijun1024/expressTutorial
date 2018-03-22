@@ -4,8 +4,6 @@ function User(id,name,passwd) {
     this.name=name;
     this.passwd=passwd;
 
-
-
     this.setId=function (Id) {
         this.id=Id;
     }

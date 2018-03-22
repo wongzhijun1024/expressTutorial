@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect();
 //3,编写sql语句
 var  userAddSql = 'INSERT INTO users(name,password) VALUES(?,?)';
-var  userAddSql_Params = ['seraph', '333'];
+var  userAddSql_Params = ['刘家豪', '21'];
 //4,进行插入操作
 /**
  *query，mysql语句执行的方法

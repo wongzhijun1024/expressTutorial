@@ -13,15 +13,9 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-
     var dao = new UserDao();
-
     dao.init();
-
-    dao.query(0,'users',function (err, data) {
-
-
-
+    this.callback = function (err, data) {
         console.log(data);
         res.render('home', {
                 introduce:'你的用户密码不正确',
@@ -29,7 +23,8 @@ app.get('/', function (req, res) {
                 name: '门户页面',users:data
             }
         );
-    })
+    };
+    dao.query(0,'users',this.callback)
 
 
 })
