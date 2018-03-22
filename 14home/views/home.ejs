@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>my ejs template</title>
+</head>
+
+<body>
+
+<% if(introduce.length>0) {%>
+   <%=introduce%>
+<%}%>
+
+<h1><%= order.price%></h1>
+
+<input type="button" value="<%=name%>">
+
+<% users.forEach(function(user){%>
+    <h3><%=user.name%></h3>
+<%})%>
+
+
+<a href="index">跳转</a>
+
+
+</table>
+</body>
+</html>
