@@ -36,9 +36,8 @@ app.get('/home', function (req, res) {
 app.get('/index',function (req,res) {
     res.render('index',{});
 });
-app.get('/login',function (req,res) {
-    res.render('login',{});
-});
+var loginController = require('./controllers/LoginController');
+app.get('/login', loginController.login);
 
 app.post('/register',urlencodedParser,function (req,res) {
     //1,从body里面获得提交的数据
@@ -89,6 +88,4 @@ app.post('/loginCheck',urlencodedParser,function (req,res) {
     });
 
 });
-
-
 var server = app.listen(8088)
