@@ -19,4 +19,18 @@ app.get('/login', function(req, res){
         res.send('欢迎登陆！');
     }
 });
+
+app.get('/index', function(req, res){
+
+    if (req.session.sign) {//检查用户是否已经登录
+        console.log(req.session);//打印session的值
+        res.send('welecome <strong><a href="' + req.session.name + '"/></strong>, 我在主页面欢迎你登录');
+    } else {
+        req.session.sign = true;
+        req.session.name = 'http://blog.csdn.net/wzjisking?viewmode=contents';
+        res.send('欢迎登陆！');
+    }
+});
+
+
 app.listen(8088);
