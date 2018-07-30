@@ -19,9 +19,6 @@ app.get("/", function(req, res) {
 var server = app.listen(3000);
 
 
-
-
-
 var ws = require("nodejs-websocket");
 //创建服务器，实现握手操作，connection
 var server = ws.createServer(function (conn) {
